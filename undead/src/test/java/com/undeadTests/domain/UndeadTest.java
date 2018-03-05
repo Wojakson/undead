@@ -2,9 +2,9 @@ package com.undeadTests.domain;
 
 import org.junit.Before;
 import org.junit.Test;
-import pl.arek.domain.Undead;
-import pl.arek.repository.UndeadRepository;
-import pl.arek.repository.UndeadRepositoryFactory;
+import com.undeadcrud.domain.Undead;
+import com.undeadcrud.repository.UndeadRepository;
+import com.undeadcrud.repository.UndeadRepositoryFactory;
 
 import static org.junit.Assert.*;
 
