@@ -10,6 +10,6 @@ public interface UndeadRepository {
     public Undead getById(Long id);
     public void addUndead(Undead undead);
     public void deleteUndead(Undead undead);
-    public void updateUndead(long oldId, Undead newUndead);
+    public void updateUndead(Undead newUndead);
 
 }
