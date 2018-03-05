@@ -19,7 +19,7 @@ public class UndeadTest {
     }
 
     @Test
-    public void getById(){
+    public Undead getById(){
         Long idToFind = (long) 1;
         assertNotNull(undeadRepository.getById(idToFind));
     }
