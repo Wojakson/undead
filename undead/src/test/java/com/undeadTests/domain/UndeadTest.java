@@ -2,7 +2,7 @@ package com.undeadTests.domain;
 
 import org.junit.Before;
 import org.junit.Test;
-import java.lang.Long.com.undeadcrud.domain.Undead;
+import com.undeadcrud.domain.Undead;
 import com.undeadcrud.repository.UndeadRepository;
 import com.undeadcrud.repository.UndeadRepositoryFactory;
 
