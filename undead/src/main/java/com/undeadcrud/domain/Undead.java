@@ -1,7 +1,5 @@
 package com.undeadcrud.domain;
 
-package com.undead.app;
-
 public class Undead 
 {
     private Long id;
