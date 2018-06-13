@@ -1,34 +1,69 @@
 package com.undeadTests.domain;
 
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
 import com.undeadcrud.domain.Undead;
 import com.undeadcrud.repository.UndeadRepository;
 import com.undeadcrud.repository.UndeadRepositoryFactory;
+import org.junit.rules.ExpectedException;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 
 import static org.junit.Assert.*;
 
-public class UndeadTest {
+@RunWith(JUnit4.class)
+public class UndeadTest  {
 
+    @Rule
+    public final ExpectedException exception = ExpectedException.none();
     UndeadRepository undeadRepository;
+
+    @Before
+    public void initRepository(){
+        undeadRepository = UndeadRepositoryFactory.getInstance();
+        Undead szwedacz = new Undead("Szkielet Wojownik","Szkielet", 5,"Cmentarz", "Demoralizacja");
+        Undead ghoul = new Undead("Szkielet Wojownik","Szkielet", 5,"Cmentarz", "Demoralizacja");
+        Undead ozywieniec = new Undead("Szkielet Wojownik","Szkielet", 5,"Cmentarz", "Demoralizacja");
+        Undead lisz = new Undead("Szkielet Wojownik","Szkielet", 5,"Cmentarz", "Demoralizacja");
+
+        szwedacz.setId(1);
+        szwedacz.setTyp("Szwedacz");
+
+        ghoul.setId(2);
+        ghoul.setTyp("Ghoul");
+
+        ozywieniec.setId(3);
+        ozywieniec.setTyp("Ozywieniec");
+
+        lisz.setId(4);
+        lisz.setTyp("Lisz");
+
+        undeadRepository.addUndead(szwedacz);
+        undeadRepository.addUndead(ghoul);
+        undeadRepository.addUndead(ozywieniec);
+        undeadRepository.addUndead(lisz);
+    }
 
     @Test
     public void isZombie() {
-        Undead zombie = new Undead();
+        Undead zombie = new Undead("Szkielet Wojownik","Szkielet", 5,"Cmentarz", "Demoralizacja");
         assertNotNull(zombie);
     }
 
     @Test
-    public Undead getById(){
-        Long idToFind = (long) 1;
+    public void getById(){
+        int idToFind = 1;
+
         assertNotNull(undeadRepository.getById(idToFind));
+
     }
 
     @Test
     public void addUndead(){
-        Undead zombie = new Undead();
-        zombie.setId((long) 1);
-        zombie.setType("Zgnilec");
+        Undead zombie = new Undead("Szkielet Wojownik","Szkielet", 5,"Cmentarz", "Demoralizacja");
+        zombie.setId(1);
+        zombie.setTyp("Zgnilec");
         undeadRepository.addUndead(zombie);
         assertNotNull(undeadRepository.getById(zombie.getId()));
 
@@ -36,7 +71,7 @@ public class UndeadTest {
 
     @Test
     public void deleteUndead(){
-        Undead zombie = undeadRepository.getById((long) 1);
+        Undead zombie = undeadRepository.getById(1);
         undeadRepository.deleteUndead(zombie);
         if (undeadRepository.getAll().size() > 0){
             assertNotNull(undeadRepository.getAll());
@@ -46,17 +81,20 @@ public class UndeadTest {
     }
 
     @Test
-    public void updateUndead(){
-        Undead wywloka = new Undead();
-        wywloka.setId((long) 1);
-        wywloka.setType("wywloka");
-        Long zombieToUpdate = (long)1;
-        undeadRepository.updateUndead(zombieToUpdate, wywloka);
-        assertEquals(undeadRepository.getById(zombieToUpdate).getType(), wywloka.getType());
+    public void updateUndead (){
+        Undead wywloka = new Undead("Szkielet Wojownik","Szkielet", 5,"Cmentarz", "Demoralizacja");
+        wywloka.setId(1);
+        wywloka.setTyp("wywloka");
+        Undead test = wywloka;
+        int zombieToUpdate = 1;
+        undeadRepository.updateUndead(1, test);
+        assertEquals(undeadRepository.getById(1, zombieToUpdate));
+        assertEquals(undeadRepository.getById(zombieToUpdate).getId(), wywloka.getTyp());
 
         for(Undead undead : undeadRepository.getAll()){
-            if(wywloka.getId().equals(zombieToUpdate)) {
-                assertNotEquals(undead.getType(), wywloka.getType());
+            if(wywloka.getId() == zombieToUpdate) {
+            //if(wywloka.getId().equals((long)zombieToUpdate)) {
+                assertNotEquals(undead.getTyp(), wywloka.getTyp());
             }
         }
     }
@@ -66,29 +104,5 @@ public class UndeadTest {
     assertNotNull(undeadRepository.getAll());
     }
 
-    @Before
-    public void initRepository(){
-        undeadRepository = UndeadRepositoryFactory.getInstance();
-        Undead szwedacz = new Undead();
-        Undead ghoul = new Undead();
-        Undead ozywieniec = new Undead();
-        Undead lisz = new Undead();
 
-        szwedacz.setId((long) 1);
-        szwedacz.setType("Szwedacz");
-
-        ghoul.setId((long) 2);
-        ghoul.setType("Ghoul");
-
-        ozywieniec.setId((long) 3);
-        ozywieniec.setType("Ozywieniec");
-
-        lisz.setId((long) 4);
-        lisz.setType("Lisz");
-
-        undeadRepository.addUndead(szwedacz);
-        undeadRepository.addUndead(ghoul);
-        undeadRepository.addUndead(ozywieniec);
-        undeadRepository.addUndead(lisz);
-    }
 }
