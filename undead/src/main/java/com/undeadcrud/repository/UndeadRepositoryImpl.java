@@ -71,9 +71,13 @@ public class UndeadRepositoryImpl implements UndeadRepository {
                 ResultSet results = getAllStmt.executeQuery();
 
                 while (results.next()) {
-                    Undead u = new Undead("Szkielet Wojownik","Szkielet", 5,"Cmentarz", "Demoralizacja");
-                    u.setId(results.getInt("id"));
-                    u.setTyp(results.getString("name"));
+                    Undead undead = new Undead("Szkielet Wojownik","Szkielet", 5,"Cmentarz", "Demoralizacja");
+                    undead.setId(results.getInt("id"));
+                    undead.setTyp(results.getString("typ"));
+                    undead.setLokacja(results.getString("lokacja"));
+                    undead.setNazwa(results.getString("nazwa"));
+                    undead.setTier(results.getInt("tier"));
+                    undead.setZdolnoscSpecjalna(results.getString("zdolnoscSpecjalna"));
                     undeads.add(u);
                 }
 
@@ -91,6 +95,10 @@ public class UndeadRepositoryImpl implements UndeadRepository {
                 Undead undead = new Undead("Szkielet Wojownik","Szkielet", 5,"Cmentarz", "Demoralizacja");
                 undead.setId(results.getInt("id"));
                 undead.setTyp(results.getString("typ"));
+                undead.setLokacja(results.getString("lokacja"));
+                undead.setNazwa(results.getString("nazwa"));
+                undead.setTier(results.getInt("tier"));
+                undead.setZdolnoscSpecjalna(results.getString("zdolnoscSpecjalna"));
                 return undead;
             } else {
                 return null;
