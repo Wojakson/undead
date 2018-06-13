@@ -38,7 +38,7 @@ public class UndeadRepositoryImpl implements UndeadRepository {
             getAllStmt = connection.prepareStatement("SELECT * FROM Undead");
             getByIdStmt = connection.prepareStatement("SELECT * FROM Undead WHERE id = ?");
             deleteTableStmt = connection.prepareStatement("DROP TABLE Undead");
-            updateStmt = connection.prepareStatement("UPDATE Undead SET name = ? WHERE id = ?");
+            updateStmt = connection.prepareStatement("UPDATE Undead SET nazwa = ? WHERE id = ?");
             deleteByIdStmt = connection.prepareStatement("DELETE FROM Undead WHERE id = ?");
         }
 
