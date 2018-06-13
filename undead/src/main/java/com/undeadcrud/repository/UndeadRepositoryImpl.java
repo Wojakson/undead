@@ -22,11 +22,10 @@ public class UndeadRepositoryImpl implements UndeadRepository {
 
         public UndeadRepositoryImpl(Connection connection) throws SQLException {
             this.connection = connection;
-
-            setConnection(connection);
             if (!isDatabaseReady()) {
                 createTables();
             }
+            setConnection(connection);
         }
 
         public Connection getConnection() {
