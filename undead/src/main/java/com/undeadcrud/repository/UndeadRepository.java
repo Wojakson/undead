@@ -12,7 +12,7 @@ public interface UndeadRepository {
     Connection getConnection();
     void setConnection(Connection connection) throws SQLException;
     List<Undead> getAll() throws SQLException;
-    Undead getById(int id);
+    Undead getById(int id) throws SQLException;
     void addUndead(Undead undead);
     void deleteUndead(Undead undead) throws SQLException;
     void updateUndead(int id, Undead newUndead) throws SQLException;
