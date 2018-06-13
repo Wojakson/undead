@@ -7,4 +7,4 @@ before_script:
 - cd scripts; ./server.sh &
 script:
   - sleep 1
-  - cd ./undead/undead; mvn test
+  - cd ./undead; mvn test
