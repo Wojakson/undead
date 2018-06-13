@@ -1,19 +1,19 @@
-package com.undeadTests.domain;
+package pl.wojciechantoniuk.domain;
 
-import org.junit.Before;
-import org.junit.Rule;
-import org.junit.Test;
-import com.undeadcrud.domain.Undead;
-import com.undeadcrud.repository.UndeadRepository;
-import com.undeadcrud.repository.UndeadRepositoryFactory;
-import org.junit.rules.ExpectedException;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
+        import org.junit.Before;
+        import org.junit.Rule;
+        import org.junit.Test;
+        import com.undeadcrud.domain.Undead;
+        import com.undeadcrud.repository.UndeadRepository;
+        import com.undeadcrud.repository.UndeadRepositoryFactory;
+        import org.junit.rules.ExpectedException;
+        import org.junit.runner.RunWith;
+        import org.junit.runners.JUnit4;
 
-import static org.junit.Assert.*;
+        import static org.junit.Assert.*;
 
 @RunWith(JUnit4.class)
-public class UndeadTest  {
+public class UndeadTest {
 
     @Rule
     public final ExpectedException exception = ExpectedException.none();
@@ -93,7 +93,7 @@ public class UndeadTest  {
 
         for(Undead undead : undeadRepository.getAll()){
             if(wywloka.getId() == zombieToUpdate) {
-            //if(wywloka.getId().equals((long)zombieToUpdate)) {
+                //if(wywloka.getId().equals((long)zombieToUpdate)) {
                 assertNotEquals(undead.getTyp(), wywloka.getTyp());
             }
         }
@@ -101,7 +101,7 @@ public class UndeadTest  {
 
     @Test
     public void getAll() throws Exception {
-    assertNotNull(undeadRepository.getAll());
+        assertNotNull(undeadRepository.getAll());
     }
 
 
