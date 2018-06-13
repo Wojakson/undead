@@ -1,3 +1,9 @@
 language: java
+notifications:
+  email: false
+install: true
+before_script:
+- cd scripts; ./server.sh &
 script:
-  - cd undead; mvn test
+  - sleep 1
+  - cd ..; mvn test
