@@ -1,4 +1,4 @@
-package pl.wojciechantoniuk.domain;
+package com;
 
         import org.junit.Before;
         import org.junit.Rule;
@@ -12,12 +12,13 @@ package pl.wojciechantoniuk.domain;
 
         import static org.junit.Assert.*;
 
-@RunWith(JUnit4.class)
-public class UndeadTest {
+    @RunWith(JUnit4.class)
+    public class UndeadTest {
 
     @Rule
     public final ExpectedException exception = ExpectedException.none();
-    UndeadRepository undeadRepository;
+
+    public UndeadRepository undeadRepository;
 
     @Before
     public void initRepository(){
