@@ -52,15 +52,16 @@ public class UndeadTest  {
     }
 
     @Test
-    public void getById(){
+    public void getById()  throws Exception {
         int idToFind = 1;
 
         assertNotNull(undeadRepository.getById(idToFind));
 
+
     }
 
     @Test
-    public void addUndead(){
+    public void addUndead() throws Exception {
         Undead zombie = new Undead("Szkielet Wojownik","Szkielet", 5,"Cmentarz", "Demoralizacja");
         zombie.setId(1);
         zombie.setTyp("Zgnilec");
@@ -70,7 +71,7 @@ public class UndeadTest  {
     }
 
     @Test
-    public void deleteUndead(){
+    public void deleteUndead()  throws Exception {
         Undead zombie = undeadRepository.getById(1);
         undeadRepository.deleteUndead(zombie);
         if (undeadRepository.getAll().size() > 0){
@@ -81,15 +82,14 @@ public class UndeadTest  {
     }
 
     @Test
-    public void updateUndead (){
+    public void updateUndead ()  throws Exception {
         Undead wywloka = new Undead("Szkielet Wojownik","Szkielet", 5,"Cmentarz", "Demoralizacja");
         wywloka.setId(1);
         wywloka.setTyp("wywloka");
         Undead test = wywloka;
         int zombieToUpdate = 1;
         undeadRepository.updateUndead(1, test);
-        assertEquals(undeadRepository.getById(1, zombieToUpdate));
-        assertEquals(undeadRepository.getById(zombieToUpdate).getId(), wywloka.getTyp());
+        assertEquals(1,undeadRepository.getById(zombieToUpdate).getId());
 
         for(Undead undead : undeadRepository.getAll()){
             if(wywloka.getId() == zombieToUpdate) {
@@ -100,7 +100,7 @@ public class UndeadTest  {
     }
 
     @Test
-    public void getAll(){
+    public void getAll() throws Exception {
     assertNotNull(undeadRepository.getAll());
     }
 
