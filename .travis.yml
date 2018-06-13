@@ -3,7 +3,8 @@ notifications:
   email: false
 install: true
 before_script:
+- cd scripts; chmod +x build.sh
 - cd scripts; ./server.sh &
 script:
   - sleep 1
-  - cd undead; mvn test
+  - cd ..; mvn test
