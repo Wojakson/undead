@@ -47,12 +47,6 @@ package com;
     }
 
     @Test
-    public void isZombie() {
-        Undead zombie = new Undead("Szkielet Wojownik","Szkielet", 5,"Cmentarz", "Demoralizacja");
-        assertNotNull(zombie);
-    }
-
-    @Test
     public void getById()  throws Exception {
         int idToFind = 1;
 
@@ -64,7 +58,7 @@ package com;
     @Test
     public void addUndead() throws Exception {
         Undead zombie = new Undead("Szkielet Wojownik","Szkielet", 5,"Cmentarz", "Demoralizacja");
-        zombie.setId(1);
+        zombie.setId(10);
         zombie.setTyp("Zgnilec");
         undeadRepository.addUndead(zombie);
         assertNotNull(undeadRepository.getById(zombie.getId()));
@@ -85,11 +79,9 @@ package com;
     @Test
     public void updateUndead ()  throws Exception {
         Undead wywloka = new Undead("Szkielet Wojownik","Szkielet", 5,"Cmentarz", "Demoralizacja");
-        wywloka.setId(1);
         wywloka.setTyp("wywloka");
-        Undead test = wywloka;
         int zombieToUpdate = 1;
-        undeadRepository.updateUndead(1, test);
+        undeadRepository.updateUndead(1, wywloka);
         assertEquals(1,undeadRepository.getById(zombieToUpdate).getId());
 
         for(Undead undead : undeadRepository.getAll()){
