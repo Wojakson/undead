@@ -94,10 +94,10 @@ public class UndeadRepositoryImpl implements UndeadRepository {
             if (results.next()) {
                 Undead undead = new Undead("Szkielet Wojownik","Szkielet", 5,"Cmentarz", "Demoralizacja");
                 undead.setId(results.getInt("id"));
-                undead.setTyp(results.getString("typ"));
-                undead.setLokacja(results.getString("lokacja"));
                 undead.setNazwa(results.getString("nazwa"));
+                undead.setTyp(results.getString("typ"));
                 undead.setTier(results.getInt("tier"));
+                undead.setLokacja(results.getString("lokacja"));
                 undead.setZdolnoscSpecjalna(results.getString("zdolnoscSpecjalna"));
                 return undead;
             } else {

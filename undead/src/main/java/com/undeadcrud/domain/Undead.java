@@ -9,7 +9,7 @@ public class Undead {
 	private String zdolnoscSpecjalna;
 
 	public Undead( String nazwa, String typ, int tier, String lokacja, String zdolnoscSpecjalna) {
-		//this.id = id;
+		this.id = id;
 		this.nazwa = nazwa;
 		this.typ = typ;
 		this.tier = tier;
