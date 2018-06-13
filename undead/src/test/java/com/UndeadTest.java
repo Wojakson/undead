@@ -48,11 +48,12 @@ package com;
 
     @Test
     public void getById()  throws Exception {
-        int idToFind = 1;
 
-        assertNotNull(undeadRepository.getById(idToFind));
-
-
+        Undead zombie = new Undead("Szkielet Wojownik","Szkielet", 5,"Cmentarz", "Demoralizacja");
+        zombie.setId(10);
+        zombie.setTyp("Zgnilec");
+        undeadRepository.addUndead(zombie);
+        assertNotNull(undeadRepository.getById(zombie.getId()));
     }
 
     @Test
@@ -62,6 +63,7 @@ package com;
         zombie.setTyp("Zgnilec");
         undeadRepository.addUndead(zombie);
         assertNotNull(undeadRepository.getById(zombie.getId()));
+        undeadRepository.deleteUndead(zombie);
 
     }
 

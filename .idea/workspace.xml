@@ -4,7 +4,7 @@
     <list default="true" id="799f6281-a65e-40f1-a2ba-3bfe5cdef1c3" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/undead/src/main/java/com/undeadcrud/domain/Undead.java" afterPath="$PROJECT_DIR$/undead/src/main/java/com/undeadcrud/domain/Undead.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/undead/src/main/java/com/undeadcrud/repository/UndeadRepositoryImpl.java" afterPath="$PROJECT_DIR$/undead/src/main/java/com/undeadcrud/repository/UndeadRepositoryImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/undead/src/test/java/com/UndeadTest.java" afterPath="$PROJECT_DIR$/undead/src/test/java/com/UndeadTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -20,8 +20,8 @@
       <file leaf-file-name="UndeadTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/undead/src/test/java/com/UndeadTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="52" column="41" lean-forward="false" selection-start-line="52" selection-start-column="41" selection-end-line="52" selection-end-column="41" />
+            <state relative-caret-position="243">
+              <caret line="42" column="30" lean-forward="false" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -29,21 +29,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Undead.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/undead/src/main/java/com/undeadcrud/domain/Undead.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="8" lean-forward="false" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UndeadRepositoryImpl.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="UndeadRepositoryImpl.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/undead/src/main/java/com/undeadcrud/repository/UndeadRepositoryImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="98" column="55" lean-forward="false" selection-start-line="98" selection-start-column="55" selection-end-line="98" selection-end-column="55" />
+            <state relative-caret-position="-471">
+              <caret line="73" column="46" lean-forward="true" selection-start-line="73" selection-start-column="46" selection-end-line="73" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -54,8 +44,8 @@
       <file leaf-file-name="UndeadRepository.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/undead/src/main/java/com/undeadcrud/repository/UndeadRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
-              <caret line="19" column="6" lean-forward="true" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
+            <state relative-caret-position="133">
+              <caret line="15" column="9" lean-forward="false" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -151,8 +141,8 @@
       <find>u</find>
       <find>addUnd</find>
       <find>addUndead</find>
-      <find>getAll</find>
       <find>getById</find>
+      <find>getAll</find>
     </findStrings>
     <replaceStrings>
       <replace>new Undead(&quot;Szkielet Wojownik&quot;,&quot;Szkielet&quot;, 5,&quot;Cmentarz&quot;, &quot;Demoralizacja&quot;)</replace>
@@ -188,10 +178,10 @@
         <option value="$PROJECT_DIR$/scripts/pom.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/.travis.yml" />
-        <option value="$PROJECT_DIR$/undead/src/test/java/com/UndeadTest.java" />
         <option value="$PROJECT_DIR$/undead/src/main/java/com/undeadcrud/repository/UndeadRepository.java" />
         <option value="$PROJECT_DIR$/undead/src/main/java/com/undeadcrud/repository/UndeadRepositoryImpl.java" />
         <option value="$PROJECT_DIR$/undead/src/main/java/com/undeadcrud/domain/Undead.java" />
+        <option value="$PROJECT_DIR$/undead/src/test/java/com/UndeadTest.java" />
       </list>
     </option>
   </component>
@@ -972,10 +962,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/undead/src/main/java/com/undeadcrud/domain/Undead.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="10" column="11" lean-forward="false" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/undead/src/test/java/com/UndeadTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="52" column="41" lean-forward="false" selection-start-line="52" selection-start-column="41" selection-end-line="52" selection-end-column="41" />
+        <state relative-caret-position="243">
+          <caret line="42" column="30" lean-forward="false" selection-start-line="42" selection-start-column="30" selection-end-line="42" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -984,27 +982,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/undead/src/main/java/com/undeadcrud/repository/UndeadRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="19" column="6" lean-forward="true" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
+        <state relative-caret-position="133">
+          <caret line="15" column="9" lean-forward="false" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/undead/src/main/java/com/undeadcrud/repository/UndeadRepositoryImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="98" column="55" lean-forward="false" selection-start-line="98" selection-start-column="55" selection-end-line="98" selection-end-column="55" />
+        <state relative-caret-position="-471">
+          <caret line="73" column="46" lean-forward="true" selection-start-line="73" selection-start-column="46" selection-end-line="73" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/undead/src/main/java/com/undeadcrud/domain/Undead.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="8" lean-forward="false" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
