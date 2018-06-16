@@ -56,13 +56,6 @@
 
     </dependencies>
 
-    <name>mockito-core</name>
-    <packaging>jar</packaging>
-    <url>https://github.com/mockito/mockito</url>
-    <description>
-        Mockito mock objects library core API and implementation
-    </description>
-
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
