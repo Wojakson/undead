@@ -55,7 +55,7 @@ public class UndeadMockTest {
         undeadRepository = new UndeadRepositoryImpl();
         undeadRepositoryMock = mock(UndeadRepositoryImpl.class);
         undeadRepository.setConnection(connectionMock);
-        
+
         verify(connectionMock).prepareStatement("INSERT INTO Undead (nazwa, typ, tier, lokacja, zdolnoscSpecjalna) VALUES (?, ?, ?, ?, ?)");
         verify(connectionMock).prepareStatement("SELECT nazwa, typ, tier, lokacja, zdolnoscSpecjalna FROM Undead");
     }
@@ -80,8 +80,8 @@ public class UndeadMockTest {
         verify(insertStatementMock).executeUpdate();
     }
 
-    abstract class AbstractResultSet implements ResultSet {
-        int i = 0;
+//    abstract class AbstractResultSet implements ResultSet {
+//        int i = 0;
 
         @Override
         public int getInt(String s) throws SQLException {
