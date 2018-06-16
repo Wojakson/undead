@@ -48,9 +48,9 @@ public class UndeadMockTest {
     @Before
     public void setupDatabase() throws SQLException {
 
-        when(connectionMock.prepareStatement("INSERT INTO Undead (nazwa, typ, tier, lokacja, zdolnoscSpecjalna) VALUES (?, ?, ?, ?, ?)"))
+        when(connectionMock.prepareStatement("INSERT INTO undead (nazwa, typ, tier, lokacja, zdolnoscSpecjalna) VALUES (?, ?, ?, ?, ?)"))
                 .thenReturn(insertStatementMock);
-        when(connectionMock.prepareStatement("SELECT id, nazwa, typ, tier, lokacja, zdolnoscSpecjalna FROM Undead")).thenReturn(selectStatementMock);
+        when(connectionMock.prepareStatement("SELECT id, nazwa, typ, tier, lokacja, zdolnoscSpecjalna FROM undead")).thenReturn(selectStatementMock);
 
         undeadRepository = new UndeadRepositoryImpl();
         undeadRepositoryMock = mock(UndeadRepositoryImpl.class);
