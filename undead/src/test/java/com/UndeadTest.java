@@ -46,58 +46,58 @@ package com;
         undeadRepository.addUndead(lisz);
     }
 
-    @Test
-    public void getById()  throws Exception {
-
-        Undead zombie = new Undead("Szkielet Wojownik","Szkielet", 5,"Cmentarz", "Demoralizacja");
-        zombie.setId(10);
-        zombie.setTyp("Zgnilec");
-        undeadRepository.addUndead(zombie);
-        assertNotNull(undeadRepository.getById(zombie.getId()));
-    }
-
-    @Test
-    public void addUndead() throws Exception {
-        Undead zombie = new Undead("Szkielet Wojownik","Szkielet", 5,"Cmentarz", "Demoralizacja");
-        zombie.setId(10);
-        zombie.setTyp("Zgnilec");
-        undeadRepository.addUndead(zombie);
-        assertNotNull(undeadRepository.getById(zombie.getId()));
-        undeadRepository.deleteUndead(zombie);
-
-    }
-
-    @Test
-    public void deleteUndead()  throws Exception {
-        Undead zombie = undeadRepository.getById(1);
-        undeadRepository.deleteUndead(zombie);
-        if (undeadRepository.getAll().size() > 0){
-            assertNotNull(undeadRepository.getAll());
-        }else {
-            assertNull(undeadRepository.getById(zombie.getId()));
-        }
-    }
-
-    @Test
-    public void updateUndead ()  throws Exception {
-        Undead wywloka = new Undead("Szkielet Wojownik","Szkielet", 5,"Cmentarz", "Demoralizacja");
-        wywloka.setTyp("wywloka");
-        int zombieToUpdate = 1;
-        undeadRepository.updateUndead(1, wywloka);
-        assertEquals(1,undeadRepository.getById(zombieToUpdate).getId());
-
-        for(Undead undead : undeadRepository.getAll()){
-            if(wywloka.getId() == zombieToUpdate) {
-                //if(wywloka.getId().equals((long)zombieToUpdate)) {
-                assertNotEquals(undead.getTyp(), wywloka.getTyp());
-            }
-        }
-    }
-
-    @Test
-    public void getAll() throws Exception {
-        assertNotNull(undeadRepository.getAll());
-    }
-
-
-}
+//    @Test
+//    public void getById()  throws Exception {
+//
+//        Undead zombie = new Undead("Szkielet Wojownik","Szkielet", 5,"Cmentarz", "Demoralizacja");
+//        zombie.setId(10);
+//        zombie.setTyp("Zgnilec");
+//        undeadRepository.addUndead(zombie);
+//        assertNotNull(undeadRepository.getById(zombie.getId()));
+//    }
+//
+//    @Test
+//    public void addUndead() throws Exception {
+//        Undead zombie = new Undead("Szkielet Wojownik","Szkielet", 5,"Cmentarz", "Demoralizacja");
+//        zombie.setId(10);
+//        zombie.setTyp("Zgnilec");
+//        undeadRepository.addUndead(zombie);
+//        assertNotNull(undeadRepository.getById(zombie.getId()));
+//        undeadRepository.deleteUndead(zombie);
+//
+//    }
+//
+//    @Test
+//    public void deleteUndead()  throws Exception {
+//        Undead zombie = undeadRepository.getById(1);
+//        undeadRepository.deleteUndead(zombie);
+//        if (undeadRepository.getAll().size() > 0){
+//            assertNotNull(undeadRepository.getAll());
+//        }else {
+//            assertNull(undeadRepository.getById(zombie.getId()));
+//        }
+//    }
+//
+//    @Test
+//    public void updateUndead ()  throws Exception {
+//        Undead wywloka = new Undead("Szkielet Wojownik","Szkielet", 5,"Cmentarz", "Demoralizacja");
+//        wywloka.setTyp("wywloka");
+//        int zombieToUpdate = 1;
+//        undeadRepository.updateUndead(1, wywloka);
+//        assertEquals(1,undeadRepository.getById(zombieToUpdate).getId());
+//
+//        for(Undead undead : undeadRepository.getAll()){
+//            if(wywloka.getId() == zombieToUpdate) {
+//                //if(wywloka.getId().equals((long)zombieToUpdate)) {
+//                assertNotEquals(undead.getTyp(), wywloka.getTyp());
+//            }
+//        }
+//    }
+//
+//    @Test
+//    public void getAll() throws Exception {
+//        assertNotNull(undeadRepository.getAll());
+//    }
+//
+//
+//}
