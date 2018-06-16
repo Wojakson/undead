@@ -17,6 +17,10 @@ public class Undead {
 		this.zdolnoscSpecjalna = zdolnoscSpecjalna;
 	}
 
+	public Undead(){
+
+	}
+
 	public int getId() {
 		return id;
 	}

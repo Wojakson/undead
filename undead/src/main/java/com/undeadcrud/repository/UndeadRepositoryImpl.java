@@ -22,24 +22,36 @@ public class UndeadRepositoryImpl implements UndeadRepository {
 
         public UndeadRepositoryImpl(Connection connection) throws SQLException {
             this.connection = connection;
+
             if (!isDatabaseReady()) {
                 createTables();
             }
             setConnection(connection);
+            prepeareStatements();
+
         }
 
-        public Connection getConnection() {
+    public UndeadRepositoryImpl() throws SQLException {
+
+    }
+
+
+    public Connection getConnection() {
             return connection;
         }
 
-        public void setConnection(Connection connection) throws SQLException {
-            this.connection = connection;
+        public void prepeareStatements() throws SQLException{
             addUndeadStmt = connection.prepareStatement("INSERT INTO Undead (nazwa, typ, tier, lokacja, zdolnoscSpecjalna) VALUES (?, ?, ?, ?, ?)");
             getAllStmt = connection.prepareStatement("SELECT * FROM Undead");
             getByIdStmt = connection.prepareStatement("SELECT * FROM Undead WHERE id = ?");
             deleteTableStmt = connection.prepareStatement("DROP TABLE Undead");
             updateStmt = connection.prepareStatement("UPDATE Undead SET nazwa = ? WHERE id = ?");
             deleteByIdStmt = connection.prepareStatement("DELETE FROM Undead WHERE id = ?");
+        }
+
+        public void setConnection(Connection connection) {
+            this.connection = connection;
+
         }
 
         public void createTables() throws SQLException {
@@ -106,7 +118,7 @@ public class UndeadRepositoryImpl implements UndeadRepository {
         }
 
         @Override
-        public void addUndead(Undead undead) {
+        public int addUndead(Undead undead) {
             try {
                 addUndeadStmt.setString(1, undead.getNazwa());
                 addUndeadStmt.setString(2, undead.getTyp());
@@ -115,6 +127,7 @@ public class UndeadRepositoryImpl implements UndeadRepository {
                 addUndeadStmt.setString(5, undead.getZdolnoscSpecjalna());
 
                 addUndeadStmt.executeUpdate();
+                return 1;
             } catch (SQLException e) {
                 throw new IllegalStateException(e.getMessage() + "\n" + e.getStackTrace().toString());
             }
