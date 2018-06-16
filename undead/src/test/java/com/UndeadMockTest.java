@@ -80,8 +80,8 @@ public class UndeadMockTest {
         verify(insertStatementMock).executeUpdate();
     }
 
-//    abstract class AbstractResultSet implements ResultSet {
-//        int i = 0;
+    abstract class AbstractResultSet implements ResultSet {
+        int i = 0;
 
         @Override
         public int getInt(String s) throws SQLException {
