@@ -20,52 +20,52 @@ package com;
 
     public UndeadRepository undeadRepository;
 
-    @Before
-    public void initRepository(){
-        undeadRepository = UndeadRepositoryFactory.getInstance();
-        Undead szwedacz = new Undead("Szkielet Wojownik","Szkielet", 5,"Cmentarz", "Demoralizacja");
-        Undead ghoul = new Undead("Szkielet Wojownik","Szkielet", 5,"Cmentarz", "Demoralizacja");
-        Undead ozywieniec = new Undead("Szkielet Wojownik","Szkielet", 5,"Cmentarz", "Demoralizacja");
-        Undead lisz = new Undead("Szkielet Wojownik","Szkielet", 5,"Cmentarz", "Demoralizacja");
+//    @Before
+//    public void initRepository(){
+//        undeadRepository = UndeadRepositoryFactory.getInstance();
+//        Undead szwedacz = new Undead("Szkielet Wojownik","Szkielet", 5,"Cmentarz", "Demoralizacja");
+//        Undead ghoul = new Undead("Szkielet Wojownik","Szkielet", 5,"Cmentarz", "Demoralizacja");
+//        Undead ozywieniec = new Undead("Szkielet Wojownik","Szkielet", 5,"Cmentarz", "Demoralizacja");
+//        Undead lisz = new Undead("Szkielet Wojownik","Szkielet", 5,"Cmentarz", "Demoralizacja");
+//
+//        szwedacz.setId(1);
+//        szwedacz.setTyp("Szwedacz");
+//
+//        ghoul.setId(2);
+//        ghoul.setTyp("Ghoul");
+//
+//        ozywieniec.setId(3);
+//        ozywieniec.setTyp("Ozywieniec");
+//
+//        lisz.setId(4);
+//        lisz.setTyp("Lisz");
+//
+//        undeadRepository.addUndead(szwedacz);
+//        undeadRepository.addUndead(ghoul);
+//        undeadRepository.addUndead(ozywieniec);
+//        undeadRepository.addUndead(lisz);
+//    }
 
-        szwedacz.setId(1);
-        szwedacz.setTyp("Szwedacz");
-
-        ghoul.setId(2);
-        ghoul.setTyp("Ghoul");
-
-        ozywieniec.setId(3);
-        ozywieniec.setTyp("Ozywieniec");
-
-        lisz.setId(4);
-        lisz.setTyp("Lisz");
-
-        undeadRepository.addUndead(szwedacz);
-        undeadRepository.addUndead(ghoul);
-        undeadRepository.addUndead(ozywieniec);
-        undeadRepository.addUndead(lisz);
-    }
-
-    @Test
-    public void getById()  throws Exception {
-
-        Undead zombie = new Undead("Szkielet Wojownik","Szkielet", 5,"Cmentarz", "Demoralizacja");
-        zombie.setId(10);
-        zombie.setTyp("Zgnilec");
-        undeadRepository.addUndead(zombie);
-        assertNotNull(undeadRepository.getById(zombie.getId()));
-    }
-
-    @Test
-    public void addUndead() throws Exception {
-        Undead zombie = new Undead("Szkielet Wojownik","Szkielet", 5,"Cmentarz", "Demoralizacja");
-        zombie.setId(10);
-        zombie.setTyp("Zgnilec");
-        undeadRepository.addUndead(zombie);
-        assertNotNull(undeadRepository.getById(zombie.getId()));
-        undeadRepository.deleteUndead(zombie);
-
-    }
+//    @Test
+//    public void getById()  throws Exception {
+//
+//        Undead zombie = new Undead("Szkielet Wojownik","Szkielet", 5,"Cmentarz", "Demoralizacja");
+//        zombie.setId(10);
+//        zombie.setTyp("Zgnilec");
+//        undeadRepository.addUndead(zombie);
+//        assertNotNull(undeadRepository.getById(zombie.getId()));
+//    }
+//
+//    @Test
+//    public void addUndead() throws Exception {
+//        Undead zombie = new Undead("Szkielet Wojownik","Szkielet", 5,"Cmentarz", "Demoralizacja");
+//        zombie.setId(10);
+//        zombie.setTyp("Zgnilec");
+//        undeadRepository.addUndead(zombie);
+//        assertNotNull(undeadRepository.getById(zombie.getId()));
+//        undeadRepository.deleteUndead(zombie);
+//
+//    }
 //
 //    @Test
 //    public void deleteUndead()  throws Exception {
