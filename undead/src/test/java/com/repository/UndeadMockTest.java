@@ -117,7 +117,7 @@ public class UndeadMockTest {
         assertEquals(1, undeadRepository.getAll().size());
 
         verify(selectStatementMock, times(1)).executeQuery();
-        verify(mockedResultSet, times(1)).getInt("id");
+//        verify(mockedResultSet, times(1)).getInt("id");
         verify(mockedResultSet, times(1)).getString("nazwa");
         verify(mockedResultSet, times(1)).getString("typ");
         verify(mockedResultSet, times(1)).getInt("tier");
