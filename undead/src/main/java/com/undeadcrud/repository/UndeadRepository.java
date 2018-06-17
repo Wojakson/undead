@@ -14,8 +14,8 @@ public interface UndeadRepository {
     List<Undead> getAll() throws SQLException;
     Undead getById(int id) throws SQLException;
     int addUndead(Undead undead);
-    void deleteUndead(Undead undead) throws SQLException;
-    void updateUndead(int id, Undead newUndead) throws SQLException;
+    int deleteUndead(Undead undead) throws SQLException;
+    int updateUndead(int id, Undead newUndead) throws SQLException;
     //void dropDatatable() throws SQLException;
     /*
     public List<Undead> getAll();
