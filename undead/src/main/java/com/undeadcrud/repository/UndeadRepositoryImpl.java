@@ -52,7 +52,7 @@ public class UndeadRepositoryImpl implements UndeadRepository {
         addUndeadsStatement = connection.prepareStatement("INSERT INTO Undeads (nazwa, typ, tier, lokacja, zdolnoscSpecjalna) VALUES (?, ?, ?, ?, ?)");
         getAllStatement = connection.prepareStatement("SELECT * FROM Undeads");
         getByIdStatement = connection.prepareStatement("SELECT * FROM Undeads WHERE ID = ?");
-        updateStatement = connection.prepareStatement("UPDATE Undeads SET nazwa = ?, typ = ?, lokacja = ?, zdolnoscSpecjalna = 0, WHERE ID = ?");
+        updateStatement = connection.prepareStatement("UPDATE Undeads SET nazwa = ?, typ = ?, tier = ?, lokacja = ?, zdolnoscSpecjalna = 0, WHERE ID = ?");
         deleteTableStatement = connection.prepareStatement("DROP TABLE Undeads");
         deleteByIdStatement = connection.prepareStatement("DELETE FROM Undeads WHERE ID = ?");
     }
