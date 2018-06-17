@@ -50,7 +50,7 @@ public class UndeadRepositoryImpl implements UndeadRepository {
     public void setConnection(Connection connection) throws SQLException {
         this.connection = connection;
         addUndeadStatement = connection.prepareStatement("INSERT INTO Undead (nazwa, typ, tier, lokacja, zdolnoscSpecjalna) VALUES (?, ?, ?, ?, ?)");
-        getAllStatement = connection.prepareStatement("SELECT nazwa, typ, tier, lokacja, zdolnoscSpecjalna FROM Undead");
+        getAllStatement = connection.prepareStatement("SELECT * FROM Undead");
         getByIdStatement = connection.prepareStatement("SELECT * FROM Undead WHERE ID = ?");
         updateStatement = connection.prepareStatement("UPDATE Undead SET nazwa = ?, typ = ?, tier = ?, lokacja = ?, zdolnoscSpecjalna = ? WHERE ID = ?");
         deleteTableStatement = connection.prepareStatement("DROP TABLE Undead");
@@ -87,7 +87,7 @@ public class UndeadRepositoryImpl implements UndeadRepository {
 
                 while (rs.next()) {
                     Undead undead = new Undead();
-                      undead.setId(rs.getInt("id"));
+//                      undead.setId(rs.getInt("id"));
                     undead.setNazwa(rs.getString("nazwa"));
                     undead.setTyp(rs.getString("typ"));
                     undead.setTier(rs.getInt("tier"));
