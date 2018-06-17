@@ -1,4 +1,4 @@
-package com;
+package com.domain;
 
 import org.junit.Before;
 import org.junit.Rule;
