@@ -27,7 +27,7 @@ public class UndeadRepositoryImpl implements UndeadRepository {
                 createTables();
             }
             setConnection(connection);
-            prepeareStatements();
+//            prepeareStatements();
 
         }
 
@@ -119,6 +119,7 @@ public class UndeadRepositoryImpl implements UndeadRepository {
 
         @Override
         public int addUndead(Undead undead) {
+            int count = 0;
             try {
                 addUndeadStmt.setString(1, undead.getNazwa());
                 addUndeadStmt.setString(2, undead.getTyp());
@@ -126,25 +127,34 @@ public class UndeadRepositoryImpl implements UndeadRepository {
                 addUndeadStmt.setString(4, undead.getLokacja());
                 addUndeadStmt.setString(5, undead.getZdolnoscSpecjalna());
 
-                addUndeadStmt.executeUpdate();
-                return 1;
+                count = addUndeadStmt.executeUpdate();
             } catch (SQLException e) {
                 throw new IllegalStateException(e.getMessage() + "\n" + e.getStackTrace().toString());
             }
+            return count;
         }
 
         @Override
         public void deleteUndead(Undead undead) throws SQLException {
 
             deleteByIdStmt.setInt(1, undead.getId());
+            deleteByIdStmt.setString(2, undead.getNazwa());
+            deleteByIdStmt.setString(3, undead.getTyp());
+            deleteByIdStmt.setInt(4, undead.getTier());
+            deleteByIdStmt.setString(5, undead.getLokacja());
+            deleteByIdStmt.setString(6, undead.getZdolnoscSpecjalna());
             deleteByIdStmt.executeUpdate();
 
         }
 
         @Override
         public void updateUndead(int id, Undead newUndead) throws SQLException {
-            updateStmt.setInt(2, id);
-            updateStmt.setString(1, newUndead.getTyp());
+            updateStmt.setInt(1, id);
+            updateStmt.setString(2, newUndead.getNazwa());
+            updateStmt.setString(3, newUndead.getTyp());
+            updateStmt.setInt(4, newUndead.getTier());
+            updateStmt.setString(5, newUndead.getLokacja());
+            updateStmt.setString(6, newUndead.getZdolnoscSpecjalna());
             updateStmt.executeUpdate();
         }
 
