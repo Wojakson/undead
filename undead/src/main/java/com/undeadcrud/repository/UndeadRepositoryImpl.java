@@ -9,7 +9,7 @@
 public class UndeadRepositoryImpl implements UndeadRepository {
 
     private Connection connection;
-    private PreparedStatement addUndeadsStatement;
+    private PreparedStatement addUndeadStatement;
     private PreparedStatement getAllStatement;
     private PreparedStatement getByIdStatement;
     private PreparedStatement deleteTableStatement;
@@ -49,7 +49,7 @@ public class UndeadRepositoryImpl implements UndeadRepository {
 
     public void setConnection(Connection connection) throws SQLException {
         this.connection = connection;
-        addUndeadsStatement = connection.prepareStatement("INSERT INTO Undead (nazwa, typ, tier, lokacja, zdolnoscSpecjalna) VALUES (?, ?, ?, ?, ?)");
+        addUndeadStatement = connection.prepareStatement("INSERT INTO Undead (nazwa, typ, tier, lokacja, zdolnoscSpecjalna) VALUES (?, ?, ?, ?, ?)");
         getAllStatement = connection.prepareStatement("SELECT * FROM Undead");
         getByIdStatement = connection.prepareStatement("SELECT * FROM Undead WHERE ID = ?");
         updateStatement = connection.prepareStatement("UPDATE Undead SET nazwa = ?, typ = ?, tier = ?, lokacja = ?, zdolnoscSpecjalna = ?, WHERE ID = ?");
@@ -67,7 +67,7 @@ public class UndeadRepositoryImpl implements UndeadRepository {
             ResultSet rs = connection.getMetaData().getTables(null, null, null, null);
             boolean tableExists = false;
             while (rs.next()) {
-                if ("Undeads".equalsIgnoreCase(rs.getString("TABLE_NAME"))) {
+                if ("Undead".equalsIgnoreCase(rs.getString("TABLE_NAME"))) {
                     tableExists = true;
                     break;
                 }
@@ -133,12 +133,12 @@ public class UndeadRepositoryImpl implements UndeadRepository {
     @Override
     public int addUndead(Undead undead) {
         try {
-            addUndeadsStatement.setString(1, undead.getNazwa());
-            addUndeadsStatement.setString(2, undead.getTyp());
-            addUndeadsStatement.setInt(3, undead.getTier());
-            addUndeadsStatement.setString(4, undead.getLokacja());
-            addUndeadsStatement.setString(5, undead.getZdolnoscSpecjalna());
-            return addUndeadsStatement.executeUpdate();
+            addUndeadStatement.setString(1, undead.getNazwa());
+            addUndeadStatement.setString(2, undead.getTyp());
+            addUndeadStatement.setInt(3, undead.getTier());
+            addUndeadStatement.setString(4, undead.getLokacja());
+            addUndeadStatement.setString(5, undead.getZdolnoscSpecjalna());
+            return addUndeadStatement.executeUpdate();
         } catch (SQLException e) {
             throw new IllegalStateException(e.getMessage() + "\n" + e.getStackTrace().toString());
         }
