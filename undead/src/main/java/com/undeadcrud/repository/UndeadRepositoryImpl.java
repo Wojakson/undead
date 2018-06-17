@@ -88,7 +88,7 @@ public class UndeadRepositoryImpl implements UndeadRepository {
 
                 while (rs.next()) {
                     Undead undead = new Undead();
-                    undead.setId(rs.getInt("id"));
+//                    undead.setId(rs.getInt("id"));
                     undead.setNazwa(rs.getString("nazwa"));
                     undead.setTyp(rs.getString("typ"));
                     undead.setTier(rs.getInt("tier"));
