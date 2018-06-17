@@ -91,8 +91,8 @@ public class UndeadRepositoryImpl implements UndeadRepository {
                     undead.setNazwa(rs.getString("nazwa"));
                     undead.setTyp(rs.getString("typ"));
                     undead.setTier(rs.getInt("tier"));
-                    //undead.setNazwa(rs.getString("lokacja"));
-                    //undead.setNazwa(rs.getString("zdolnoscSpecjalna"));
+                    undead.setLokacja(rs.getString("lokacja"));
+                    undead.setZdolnoscSpecjalna(rs.getString("zdolnoscSpecjalna"));
                     undeads.add(undead);
                 }
             } catch (SQLException e) {

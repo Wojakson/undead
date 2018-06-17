@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="799f6281-a65e-40f1-a2ba-3bfe5cdef1c3" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/undead/src/test/java/com/repository/UndeadMockTest.java" afterPath="$PROJECT_DIR$/undead/src/test/java/com/repository/UndeadMockTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/undead/src/main/java/com/undeadcrud/repository/UndeadRepositoryImpl.java" afterPath="$PROJECT_DIR$/undead/src/main/java/com/undeadcrud/repository/UndeadRepositoryImpl.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -39,7 +39,7 @@
       <file leaf-file-name="UndeadMockTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/undead/src/test/java/com/repository/UndeadMockTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
+            <state relative-caret-position="119">
               <caret line="117" column="0" lean-forward="true" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
               <folding />
             </state>
@@ -49,8 +49,8 @@
       <file leaf-file-name="UndeadRepositoryImpl.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/undead/src/main/java/com/undeadcrud/repository/UndeadRepositoryImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="150" column="13" lean-forward="true" selection-start-line="150" selection-start-column="13" selection-end-line="150" selection-end-column="13" />
+            <state relative-caret-position="140">
+              <caret line="86" column="0" lean-forward="true" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -144,8 +144,8 @@
       <find>getAll</find>
       <find>getAllStatement</find>
       <find>create</find>
-      <find>checkGetting</find>
       <find>from undead</find>
+      <find>checkGetting</find>
     </findStrings>
     <replaceStrings>
       <replace>new Undead(&quot;Szkielet Wojownik&quot;,&quot;Szkielet&quot;, 5,&quot;Cmentarz&quot;, &quot;Demoralizacja&quot;)</replace>
@@ -814,7 +814,14 @@
       <option name="project" value="LOCAL" />
       <updated>1529244056011</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="getall pre fix v3">
+      <created>1529244216004</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1529244216004</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -896,7 +903,8 @@
     <MESSAGE value="fixed local db - huge update" />
     <MESSAGE value="getall pre fix" />
     <MESSAGE value="getall pre fix v2" />
-    <option name="LAST_COMMIT_MESSAGE" value="getall pre fix v2" />
+    <MESSAGE value="getall pre fix v3" />
+    <option name="LAST_COMMIT_MESSAGE" value="getall pre fix v3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1199,14 +1207,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/undead/src/test/java/com/repository/UndeadMockTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="117" column="0" lean-forward="true" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/undead/src/main/java/com/undeadcrud/domain/Undead.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="353">
@@ -1236,6 +1236,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/undead/src/test/java/com/repository/UndeadMockTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="117" column="0" lean-forward="true" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/undead/src/main/java/com/undeadcrud/repository/UndeadRepositoryFactory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -1248,8 +1256,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/undead/src/main/java/com/undeadcrud/repository/UndeadRepositoryImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="150" column="13" lean-forward="true" selection-start-line="150" selection-start-column="13" selection-end-line="150" selection-end-column="13" />
+        <state relative-caret-position="140">
+          <caret line="86" column="0" lean-forward="true" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
