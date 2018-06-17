@@ -1,10 +1,10 @@
-        package com.undeadcrud.repository;
+package com.undeadcrud.repository;
 
-        import com.undeadcrud.domain.Undead;
+import com.undeadcrud.domain.Undead;
 
-        import java.sql.*;
-        import java.util.ArrayList;
-        import java.util.List;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class UndeadRepositoryImpl implements UndeadRepository {
 
@@ -25,7 +25,7 @@ public class UndeadRepositoryImpl implements UndeadRepository {
         setConnection(connection);
     }
 
-    public UndeadRepositoryImpl() throws SQLException{
+    public UndeadRepositoryImpl() throws SQLException {
 
         this.connection = DriverManager.getConnection("jdbc:hsqldb:hsql://localhost/workdb");
         if (!isReady()) {
@@ -79,11 +79,10 @@ public class UndeadRepositoryImpl implements UndeadRepository {
     }
 
 
-
     @Override
     public List<Undead> getAll() {
         List<Undead> undeads = new ArrayList<>();
-        if(connection!=null){
+        if (connection != null) {
             try {
                 ResultSet rs = getAllStatement.executeQuery();
 
@@ -101,8 +100,7 @@ public class UndeadRepositoryImpl implements UndeadRepository {
                 throw new IllegalStateException(e.getMessage() + "\n" + e.getStackTrace().toString());
             }
             return undeads;
-        }
-        else return new ArrayList<>();
+        } else return new ArrayList<>();
     }
 
     @Override
@@ -127,7 +125,6 @@ public class UndeadRepositoryImpl implements UndeadRepository {
         }
         return undead;
     }
-
 
 
     @Override

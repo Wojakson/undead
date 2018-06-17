@@ -10,11 +10,17 @@ public interface UndeadRepository {
 
 
     Connection getConnection();
+
     void setConnection(Connection connection) throws SQLException;
+
     List<Undead> getAll() throws SQLException;
+
     Undead getById(int id) throws SQLException;
+
     int addUndead(Undead undead);
+
     int deleteUndead(Undead undead) throws SQLException;
+
     int updateUndead(int id, Undead newUndead) throws SQLException;
     //void dropDatatable() throws SQLException;
     /*

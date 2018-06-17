@@ -16,6 +16,7 @@ import org.mockito.InOrder;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
+
 import java.sql.*;
 
 import java.sql.SQLException;
@@ -42,7 +43,6 @@ public class UndeadMockTest {
 
     @Mock
     PreparedStatement selectStatementMock;
-
 
 
     @Before
@@ -87,10 +87,12 @@ public class UndeadMockTest {
         public int getInt(String s) throws SQLException {
             return 1;
         }
+
         @Override
         public String getString(String columnLabel) throws SQLException {
             return "Zombi";
         }
+
         @Override
         public boolean next() throws SQLException {
             if (i == 1)

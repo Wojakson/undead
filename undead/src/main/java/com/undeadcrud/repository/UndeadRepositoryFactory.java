@@ -5,7 +5,7 @@ import java.sql.SQLException;
 
 public class UndeadRepositoryFactory {
 
-    public static UndeadRepository getInstance(){
+    public static UndeadRepository getInstance() {
         try {
             String url = "jdbc:hsqldb:hsql://localhost/workdb";
             return new UndeadRepositoryImpl(DriverManager.getConnection(url));
