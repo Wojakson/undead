@@ -48,16 +48,16 @@ public class UndeadMockTest {
     @Before
     public void setupDatabase() throws SQLException {
 
-        when(connectionMock.prepareStatement("INSERT INTO Undead (nazwa, typ, tier, lokacja, zdolnoscSpecjalna) VALUES (?, ?, ?, ?, ?)"))
+        when(connectionMock.prepareStatement("INSERT INTO Undeads (nazwa, typ, tier, lokacja, zdolnoscSpecjalna) VALUES (?, ?, ?, ?, ?)"))
                 .thenReturn(insertStatementMock);
-        when(connectionMock.prepareStatement("SELECT id, nazwa, typ, tier, lokacja, zdolnoscSpecjalna FROM Undead")).thenReturn(selectStatementMock);
+        when(connectionMock.prepareStatement("SELECT id, nazwa, typ, tier, lokacja, zdolnoscSpecjalna FROM Undeads")).thenReturn(selectStatementMock);
 
         undeadRepository = new UndeadRepositoryImpl();
         undeadRepositoryMock = mock(UndeadRepositoryImpl.class);
         undeadRepository.setConnection(connectionMock);
 
-        verify(connectionMock).prepareStatement("INSERT INTO Undead (nazwa, typ, tier, lokacja, zdolnoscSpecjalna) VALUES (?, ?, ?, ?, ?)");
-        verify(connectionMock).prepareStatement("SELECT nazwa, typ, tier, lokacja, zdolnoscSpecjalna FROM Undead");
+        verify(connectionMock).prepareStatement("INSERT INTO Undeads (nazwa, typ, tier, lokacja, zdolnoscSpecjalna) VALUES (?, ?, ?, ?, ?)");
+        verify(connectionMock).prepareStatement("SELECT nazwa, typ, tier, lokacja, zdolnoscSpecjalna FROM Undeads");
     }
 
     @Test
@@ -116,12 +116,12 @@ public class UndeadMockTest {
 
         verify(selectStatementMock, times(1)).executeQuery();
         verify(mockedResultSet, times(1)).getInt("id");
-        verify(mockedResultSet, times(2)).getString("nazwa");
-        verify(mockedResultSet, times(3)).getString("typ");
-        verify(mockedResultSet, times(4)).getInt("tier");
-        verify(mockedResultSet, times(5)).getString("lokacja");
-        verify(mockedResultSet, times(6)).getString("zdolnoscSpecjalna");
-        verify(mockedResultSet, times(7)).next();
+        verify(mockedResultSet, times(1)).getString("nazwa");
+        verify(mockedResultSet, times(1)).getString("typ");
+        verify(mockedResultSet, times(1)).getInt("tier");
+        verify(mockedResultSet, times(1)).getString("lokacja");
+        verify(mockedResultSet, times(1)).getString("zdolnoscSpecjalna");
+        verify(mockedResultSet, times(2)).next();
     }
 
     @Test
@@ -138,10 +138,10 @@ public class UndeadMockTest {
         assertEquals(1, undeadRepository.addUndead(undead));
 
         inorder.verify(insertStatementMock, times(1)).setString(1, "Wojowniczy szkielet");
-        inorder.verify(insertStatementMock, times(1)).setString(1, "Szkielet");
-        inorder.verify(insertStatementMock, times(1)).setInt(2, 5);
-        inorder.verify(insertStatementMock, times(1)).setString(1, "Cmentarzysko");
-        inorder.verify(insertStatementMock, times(1)).setString(1, "Demoralizacja");
+        inorder.verify(insertStatementMock, times(1)).setString(2, "Szkielet");
+        inorder.verify(insertStatementMock, times(1)).setInt(3, 5);
+        inorder.verify(insertStatementMock, times(1)).setString(4, "Cmentarzysko");
+        inorder.verify(insertStatementMock, times(1)).setString(5, "Demoralizacja");
         inorder.verify(insertStatementMock).executeUpdate();
     }
 
