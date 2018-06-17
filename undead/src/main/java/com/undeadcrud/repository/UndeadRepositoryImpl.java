@@ -82,26 +82,23 @@ public class UndeadRepositoryImpl implements UndeadRepository {
     @Override
     public List<Undead> getAll() {
         List<Undead> undeads = new ArrayList<>();
-        if (connection != null) {
             try {
-                try (ResultSet rs = getAllStatement.executeQuery()) {
+                    ResultSet rs = getAllStatement.executeQuery();
 
-                    while (rs.next()) {
-                        Undead undead = new Undead();
-    //                    undead.setId(rs.getInt("id"));
-                        undead.setNazwa(rs.getString("nazwa"));
-                        undead.setTyp(rs.getString("typ"));
-                        undead.setTier(rs.getInt("tier"));
-                        undead.setNazwa(rs.getString("lokacja"));
-                        undead.setNazwa(rs.getString("zdolnoscSpecjalna"));
-                        undeads.add(undead);
-                    }
+                while (rs.next()) {
+                    Undead undead = new Undead();
+                      undead.setId(rs.getInt("id"));
+                    undead.setNazwa(rs.getString("nazwa"));
+                    undead.setTyp(rs.getString("typ"));
+                    undead.setTier(rs.getInt("tier"));
+                    //undead.setNazwa(rs.getString("lokacja"));
+                    //undead.setNazwa(rs.getString("zdolnoscSpecjalna"));
+                    undeads.add(undead);
                 }
             } catch (SQLException e) {
                 throw new IllegalStateException(e.getMessage() + "\n" + e.getStackTrace().toString());
             }
             return undeads;
-        } else return new ArrayList<>();
     }
 
     @Override
