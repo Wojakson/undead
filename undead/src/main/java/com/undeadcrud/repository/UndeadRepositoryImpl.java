@@ -84,7 +84,7 @@ public class UndeadRepositoryImpl implements UndeadRepository {
         List<Undead> undeads = new ArrayList<>();
         if (connection != null) {
             try {
-                ResultSet rs = getAllStatement.executeQuery();
+                    ResultSet rs = getAllStatement.executeQuery();
 
                 while (rs.next()) {
                     Undead undead = new Undead();

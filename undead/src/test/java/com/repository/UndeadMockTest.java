@@ -106,7 +106,7 @@ public class UndeadMockTest {
     public void checkGetting() throws Exception {
         AbstractResultSet mockedResultSet = mock(AbstractResultSet.class);
         when(mockedResultSet.next()).thenCallRealMethod();
-        when(mockedResultSet.getInt("id")).thenCallRealMethod();
+//        when(mockedResultSet.getInt("id")).thenCallRealMethod();
         when(mockedResultSet.getString("nazwa")).thenCallRealMethod();
         when(mockedResultSet.getString("typ")).thenCallRealMethod();
         when(mockedResultSet.getInt("tier")).thenCallRealMethod();
