@@ -50,14 +50,14 @@ public class UndeadMockTest {
 
         when(connectionMock.prepareStatement("INSERT INTO Undead (nazwa, typ, tier, lokacja, zdolnoscSpecjalna) VALUES (?, ?, ?, ?, ?)"))
                 .thenReturn(insertStatementMock);
-        when(connectionMock.prepareStatement("SELECT id, nazwa, typ, tier, lokacja, zdolnoscSpecjalna FROM Undead")).thenReturn(selectStatementMock);
+        when(connectionMock.prepareStatement("SELECT * FROM Undead")).thenReturn(selectStatementMock);
 
         undeadRepository = new UndeadRepositoryImpl();
         undeadRepositoryMock = mock(UndeadRepositoryImpl.class);
         undeadRepository.setConnection(connectionMock);
 
         verify(connectionMock).prepareStatement("INSERT INTO Undead (nazwa, typ, tier, lokacja, zdolnoscSpecjalna) VALUES (?, ?, ?, ?, ?)");
-        verify(connectionMock).prepareStatement("SELECT nazwa, typ, tier, lokacja, zdolnoscSpecjalna FROM Undead");
+        verify(connectionMock).prepareStatement("SELECT * FROM Undead");
     }
 
     @Test
